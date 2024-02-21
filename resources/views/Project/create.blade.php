@@ -12,7 +12,8 @@
 
             <div class="d-flex align-items-start mb-2">
                 <label class="input" for="description">description</label>
-                <textarea style="width: 100%" name="description" id="description" cols="30" rows="10"></textarea>
+                <input type="text" style="width: 100%; height: 100px" name="description" id="description" cols="30"
+                    rows="10"></input>
 
             </div>
 
