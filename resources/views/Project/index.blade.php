@@ -22,7 +22,7 @@
                         @csrf
                         @method('DELETE')
 
-                        <input type="submit" value="X">
+                        <input type="submit" value="X" style="color: white" class="xxx">
 
                     </form>
 
@@ -71,31 +71,37 @@
         position: absolute;
         right: 5px;
         text-decoration: none;
-        color: black;
+        color: rgba(255, 255, 255, 0);
         font-size: 18px;
         top: 5px;
     }
 
-    .add-project {
-        width: 40px;
-        height: 40px;
-        border: 1px solid black;
-        font-size: 1.5em;
-        font-weight: 800;
-        border-radius: 10px;
-    }
+    <<<<<<< HEAD .add-project {
+        =======.xxx {
+            border: none;
+            background-color: rgba(0, 255, 255, 0);
+        }
 
-    .add-project span {
-        margin-bottom: 4px;
-    }
+        .add-project {
+            >>>>>>>49703aa70f157bb351332828052e2bc179eefbac width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            font-size: 1.5em;
+            font-weight: 800;
+            border-radius: 10px;
+        }
 
-    .add-project:hover {
-        background-color: rgb(164, 219, 255);
-        transition: 0.3s
-    }
+        .add-project span {
+            margin-bottom: 4px;
+        }
 
-    h3,
-    p {
-        text-align: center
-    }
+        .add-project:hover {
+            background-color: rgb(164, 219, 255);
+            transition: 0.3s
+        }
+
+        h3,
+        p {
+            text-align: center
+        }
 </style>
