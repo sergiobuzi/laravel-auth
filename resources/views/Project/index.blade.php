@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <h1 class="text-center mb-5">
+    <h1 class="text-center mb-3">
         Projects {{ count($projects) }}
     </h1>
 
-    <div class="d-flex w-100 justify-content-center" >
-        <a href="{{route('project.create')}}" class="add-project d-flex align-items-center justify-content-center">
+    <div class="d-flex w-100 justify-content-center mb-3" >
+        <a href="{{route('project.create')}}" class="add-project d-flex align-items-center justify-content-center text-decoration-none">
             <span>+</span>
         </a>
     </div>
@@ -27,8 +27,8 @@
                 @endauth
                 <img class="mb-3" src="{{ $project->image }}" alt="" style="width: 240px">
                 <h3 class="mb-2 p-2"> <b>Title: </b><a
-                        href="{{ route('project.show', $project->id) }}">{{ $project->name }}</a></h3>
-                <div class="tecnology p-2"><b>Technologies: </b>{{ $project->tecnology }}</div>
+                        href="{{ route('project.show', $project->id) }}" class="text-decoration-none">{{ $project->name }}</a></h3>
+                <div class="tecnology p-2"><p><b>Technologies: </b>{{ $project->tecnology }}</p></div>
 
             </li>
         @endforeach
@@ -78,4 +78,12 @@
     .add-project span{
         margin-bottom: 4px;
     }
+    .add-project:hover{
+        background-color: rgb(164, 219, 255);
+        transition: 0.3s
+    }
+    h3,p{
+        text-align: center
+    }
+
 </style>
