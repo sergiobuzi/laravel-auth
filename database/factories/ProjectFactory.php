@@ -22,7 +22,7 @@ class ProjectFactory extends Factory
         return [
             'name' => fake() ->words(3, true),
             'description'=> fake() ->paragraph(),
-            'image'=> fake() ->imageUrl(640, 480, 'animals', true),
+            'image'=> fake() ->imageUrl(360, 360, 'animals', true, 'cats'),
             'tecnology'=> fake() ->words(5, true),
             'link'=> fake() ->url(),
         ];
