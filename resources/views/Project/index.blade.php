@@ -4,14 +4,15 @@
         Projects {{ count($projects) }}
     </h1>
 
-    <div class="d-flex w-100 justify-content-center mb-3" >
-        <a href="{{route('project.create')}}" class="add-project d-flex align-items-center justify-content-center text-decoration-none">
+    <div class="d-flex w-100 justify-content-center mb-3">
+        <a href="{{ route('project.create') }}"
+            class="add-project d-flex align-items-center justify-content-center text-decoration-none">
             <span>+</span>
         </a>
     </div>
-    
 
-    <ul class="d-flex flex-wrap justify-content-center" >
+
+    <ul class="d-flex flex-wrap justify-content-center">
         @foreach ($projects as $project)
             <li class=" m-3 project">
                 @auth
@@ -28,14 +29,16 @@
                 @endauth
 
                 <img class="mb-3" src="{{ $project->image }}" alt="" style="width: 240px">
-                <h3 class="mb-2 p-2"> <b>Title: </b><a
-                        href="{{ route('project.show', $project->id) }}" class="text-decoration-none">{{ $project->name }}</a></h3>
-                <div class="tecnology p-2"><p><b>Technologies: </b>{{ $project->tecnology }}</p></div>
+                <h3 class="mb-2 p-2"> <b>Title: </b><a href="{{ route('project.show', $project->id) }}"
+                        class="text-decoration-none">{{ $project->name }}</a></h3>
+                <div class="tecnology p-2">
+                    <p><b>Technologies: </b>{{ $project->tecnology }}</p>
+                </div>
 
                 @auth
-                    <a href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+                    <a href="{{ route('project.edit', $project->id) }}">EDIT</a>
                 @endauth
-                    
+
             </li>
         @endforeach
     </ul>
@@ -56,7 +59,7 @@
 
     ul {
         list-style-type: none;
-        padding-left: 0!important;
+        padding-left: 0 !important;
 
     }
 
@@ -73,7 +76,7 @@
         top: 5px;
     }
 
-    .add-project{
+    .add-project {
         width: 40px;
         height: 40px;
         border: 1px solid black;
@@ -81,15 +84,18 @@
         font-weight: 800;
         border-radius: 10px;
     }
-    .add-project span{
+
+    .add-project span {
         margin-bottom: 4px;
     }
-    .add-project:hover{
+
+    .add-project:hover {
         background-color: rgb(164, 219, 255);
         transition: 0.3s
     }
-    h3,p{
+
+    h3,
+    p {
         text-align: center
     }
-
 </style>
