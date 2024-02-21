@@ -4,7 +4,14 @@
         Projects {{ count($projects) }}
     </h1>
 
-    <ul class="d-flex flex-wrap justify-content-center">
+    <div class="d-flex w-100 justify-content-center" >
+        <a href="{{route('project.create')}}" class="add-project d-flex align-items-center justify-content-center">
+            <span>+</span>
+        </a>
+    </div>
+    
+
+    <ul class="d-flex flex-wrap justify-content-center" >
         @foreach ($projects as $project)
             <li class=" m-3 project">
                 @auth
@@ -43,6 +50,7 @@
 
     ul {
         list-style-type: none;
+        padding-left: 0!important;
 
     }
 
@@ -57,5 +65,17 @@
         color: black;
         font-size: 18px;
         top: 5px;
+    }
+
+    .add-project{
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        font-size: 1.5em;
+        font-weight: 800;
+        border-radius: 10px;
+    }
+    .add-project span{
+        margin-bottom: 4px;
     }
 </style>

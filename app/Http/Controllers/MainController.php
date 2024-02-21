@@ -26,7 +26,7 @@ class MainController extends Controller
      */
     public function create()
     {
-        //
+        return view('project.create');
     }
 
     /**
@@ -37,7 +37,20 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> all();
+
+        $newProject = new Project();
+
+        $newProject -> name = $data['name'];
+        $newProject -> description = $data['description'];
+        $newProject -> image =$data['image'];
+        $newProject -> tecnology =$data['tecnology'];
+        $newProject -> link =$data['link'];
+
+ 
+        $newProject -> save();
+  
+         return redirect() -> route('project.show', $newProject ->id);
     }
 
     /**
