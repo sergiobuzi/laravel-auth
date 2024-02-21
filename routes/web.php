@@ -29,11 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // PROJECT
+    Route :: delete('/project/{id}', [MainController :: class, 'destroy'])
+-> name('project.delete');
 
 });
 
-Route :: delete('/project/{id}', [MainController :: class, 'destroy'])
--> name('project.delete');
+
 
 Route :: get('/project/{id}', [MainController :: class, 'show'])
     -> name('project.show');
