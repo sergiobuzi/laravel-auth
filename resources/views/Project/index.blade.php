@@ -33,7 +33,13 @@
                 <div class="tecnology p-2"><p><b>Technologies: </b>{{ $project->tecnology }}</p></div>
 
                 @auth
-                    <a href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center rounded-3 mb-2" style="border: 1px solid black; width: 50px; height:40px">
+                            <a class="text-decoration-none" href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+                        </div>
+                        
+                    </div>
+                   
                 @endauth
                     
             </li>
