@@ -5,37 +5,54 @@
         <div><b>Description: </b>{{ $project->description }}</div>
         <a href="{{ $project->link }}">Project Link</a>
     </div> --}}
-
+    <h1 class="text-center mb-5">New Project</h1>
     @auth
-        <form action="{{route('project.store')}}" method="POST">
+        <form class="create" action="{{ route('project.store') }}" method="POST">
             @csrf
             @method('POST')
+            <div class="d-flex align-items-start mb-2">
+                <label class="input" for="title">name</label>
+                <input style="width: 100%" type="text" name="name" id="name">
+            </div>
 
-            <label for="title">name</label>
-            <input type="text" name="name" id="name">
+            <div class="d-flex align-items-start mb-2">
+                <label class="input" for="description">description</label>
+                <textarea style="width: 100%" name="description" id="description" cols="30" rows="10"></textarea>
+
+            </div>
+
+            <div class="d-flex align-items-start mb-2">
+                <label class="input" for="image">image</label>
+                <input style="width: 100%" type="text" name="image" id="image">
+            </div>
+
+            <div class="d-flex align-items-start mb-2">
+                <label class="input" for="tecnology">tecnology</label>
+                <input style="width: 100%" type="text" name="tecnology" id="tecnology">
+            </div>
+
+            <div class="d-flex align-items-start mb-5">
+
+                <label class="input" for="link">link</label>
+                <input style="width: 100%" type="link" name="link" id="link">
+            </div>
+
             <br>
-            <label for="description">description</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
-            <br>
-            <label for="image">image</label>
-            <input type="text" name="image" id="image">
-            <br>
-            <label for="tecnology">tecnology</label>
-            <input type="text" name="tecnology" id="tecnology">
-            <br>
-            <label for="link">link</label>
-            <input type="link" name="link" id="link">
-            <br>
-            <input type="submit" value="CREATE">
+            <input type="submit" value="CREATE" style="width: 100px; margin: 0 auto">
         </form>
     @endauth
 @endsection
 
 <style>
-    .detail {
-        border: 1px solid black;
+    .create {
+        display: flex;
+        flex-direction: column;
         width: 600px;
         margin: 0 auto;
-        padding: 5px;
+        padding: 20px
+    }
+
+    .input {
+        width: 100px;
     }
 </style>
