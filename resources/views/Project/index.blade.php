@@ -15,6 +15,10 @@
         @foreach ($projects as $project)
             <li class=" m-3 project">
                 @auth
+                    <a href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+
+
+
                     <form class="delete" action="{{ route('project.delete', $project->id) }}" method="POST">
 
 

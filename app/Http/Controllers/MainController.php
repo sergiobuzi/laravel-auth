@@ -73,7 +73,8 @@ class MainController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project :: find($id);
+        return view('project.edit', compact('project'));
     }
 
     /**
@@ -85,7 +86,22 @@ class MainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $projects = Project::find($id);
+
+        $data =$request -> all();
+
+
+        $projects -> name = $data['name'];
+        $projects -> description = $data['description'];
+        $projects -> image = $data['image'];
+        $projects -> tecnology = $data['tecnology'];
+        $projects -> link = $data['link'];
+
+        
+        $projects ->update();
+
+        return redirect() -> route('project.index', $projects -> id);
+
     }
 
     /**

@@ -35,7 +35,10 @@ Route::middleware('auth')->group(function () {
         ->name('project.store');
     Route :: delete('/project/{id}', [MainController :: class, 'destroy'])
         -> name('project.delete');
-    
+    Route::get('/project/{id}/edit', [MainController :: class, 'edit'])
+        ->name('project.edit');
+    Route :: put('/project/{id}/edit', [MainController :: class, 'update'])
+        -> name('project.update');
 
 });
 
