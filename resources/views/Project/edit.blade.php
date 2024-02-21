@@ -7,9 +7,9 @@
     </div> --}}
 
     @auth
-        <form action="{{route('project.update', $project ->id)}}" method="GET">
+        <form action="{{route('project.update', $project ->id)}}" method="POST">
             @csrf
-            @method('GET')
+            @method('PUT')
 
             <label for="title">name</label>
             <input type="text" name="name" id="name" value="{{$project ->name}}">
