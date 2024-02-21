@@ -21,7 +21,7 @@
                         @csrf
                         @method('DELETE')
 
-                        <input type="submit" value="X">
+                        <input type="submit" value="X" style="color: white" class="xxx">
 
                     </form>
 
@@ -68,9 +68,14 @@
         position: absolute;
         right: 5px;
         text-decoration: none;
-        color: black;
+        color: rgba(255, 255, 255, 0);
         font-size: 18px;
         top: 5px;
+    }
+
+    .xxx{
+        border: none;
+        background-color: rgba(0, 255, 255, 0);
     }
 
     .add-project{
