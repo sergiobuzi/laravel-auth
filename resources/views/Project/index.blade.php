@@ -7,6 +7,15 @@
     <ul class="d-flex flex-wrap justify-content-center">
         @foreach ($projects as $project)
             <li class=" m-3 project">
+                <form class="delete" action="{{ route('project.delete', $project->id) }}" method="POST">
+
+
+                    @csrf
+                    @method('DELETE')
+
+
+                    <input type="submit" value="X">
+                </form>
 
                 <img class="mb-3" src="{{ $project->image }}" alt="" style="width: 240px">
                 <h3 class="mb-2 p-2"> <b>Title: </b><a
@@ -24,6 +33,7 @@
         border: 1px solid lightgray;
         width: 240px;
         border-radius: 8px;
+        position: relative;
     }
 
     img {
@@ -31,10 +41,20 @@
     }
 
     ul {
-        list-style-type: none
+        list-style-type: none;
+
     }
 
     .tecnology {
         word-wrap: break-word;
+    }
+
+    .delete {
+        position: absolute;
+        right: 5px;
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        top: 5px;
     }
 </style>

@@ -17,7 +17,7 @@ use App\http\Controllers\MainController;
 */
 
 Route::get('/', [MainController :: class, 'index'])
-    -> name('Project.index');
+    -> name('project.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,7 +27,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // PROJECT
+
 });
+
+Route :: delete('/project/{id}', [MainController :: class, 'destroy'])
+-> name('project.delete');
 
 Route :: get('/project/{id}', [MainController :: class, 'show'])
     -> name('project.show');
