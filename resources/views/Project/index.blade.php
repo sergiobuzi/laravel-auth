@@ -15,22 +15,27 @@
         @foreach ($projects as $project)
             <li class=" m-3 project">
                 @auth
-                    
-                    <form class="delete" action="{{ route('project.delete', $project->id) }}" method="POST">
 
+                    <form class="delete" action="{{ route('project.delete', $project->id) }}" method="POST">
 
                         @csrf
                         @method('DELETE')
 
-
                         <input type="submit" value="X">
+
                     </form>
+
                 @endauth
+
                 <img class="mb-3" src="{{ $project->image }}" alt="" style="width: 240px">
                 <h3 class="mb-2 p-2"> <b>Title: </b><a
                         href="{{ route('project.show', $project->id) }}" class="text-decoration-none">{{ $project->name }}</a></h3>
                 <div class="tecnology p-2"><p><b>Technologies: </b>{{ $project->tecnology }}</p></div>
-                <a href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+
+                @auth
+                    <a href="{{ route('project.edit', $project ->id) }}">EDIT</a>
+                @endauth
+                    
             </li>
         @endforeach
     </ul>

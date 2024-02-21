@@ -1,10 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    {{-- <h1 class="text-center my-3">Project [{{ $project->id }}]Detail:</h1>
-    <div class="detail">
-        <div><b>Description: </b>{{ $project->description }}</div>
-        <a href="{{ $project->link }}">Project Link</a>
-    </div> --}}
     <h1 class="text-center mb-5">New Project</h1>
     @auth
         <form class="create" action="{{ route('project.store') }}" method="POST">
